@@ -1,0 +1,21 @@
+﻿
+@{
+	ViewData["Title"] = "Dane";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Progres"] = 20;
+}
+
+
+<h3>TempData</h3>
+TempData w pozwala przekazywać dane pomiędzy obecnym i kolejnymi żądaniami HTTP, nie tylko jednym jak w przypadku ViewData i ViewBag. Dane z TempData są zapisywane w sesji, niesie to ze sobą pewne konsekwencje. Przeglądarka użytkownika może mieć wyłączone ciasteczka, przez co nie uda się przekazać danych z TempData. Możliwe jest również trzymanie sesji na serwerze jednak to rozwiązanie niesie ze sobą inny problem. W przypadku, gdy portal obsługuje więcej niż jeden fizyczny serwer, ruch jest dzielony w zależności od obciążenia konkretnego serwera. Może się zdarzyć, że użytkownik przy kolejnym żądaniu zostanie skierowany na inny serwer, który nie posiada zapisanej sesji. Jedynym słusznym rozwiązaniem w tym wypadku jest trzymanie sesji we wspólnej bazie danych. Dane sesji są w tym wypadku współdzielone pomiędzy serwerami.
+
+<h3>Przykład TempData w kontrolerze:</h3>
+<pre>
+public ActionResult Login(string returnUrl)
+{
+    TempData["ReturnUrl"] = returnUrl;
+    return View();
+}</pre>
+<h3>Odczyt wartości z ViewData w widoku:</h3>
+<pre>@@TempData["ReturnUrl"]</pre>
+

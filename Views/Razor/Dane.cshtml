@@ -1,0 +1,63 @@
+﻿
+@{
+	ViewData["Title"] = "Dane";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Progres"] = 17;
+}
+
+<h1>View Bag, ViewData, TempData w ASP.net MVC</h1>
+
+<h3>ViewBag - przekazywanie danych z kontrolera do widoku.</h3>
+
+W ASP.NET MVC mamy 3 możliwości przekazywania danych z kontrolera do widoku. ViewBag i ViewData są prawie identyczne natomiast TempData posiada dłuższy czas istnienia.
+
+<h3>Cechy wspólne ViewBag i ViewData</h3>
+Zarówno ViewBag jak i ViewData są to obiekty krótkotrwałe, tworzone są na czas otwarcia widoku, po kliknięciu linka do innego adresu url zostają skasowane.
+
+
+<h3>Różnice ViewBag i ViewData:</h3>
+<ol>
+	<li>
+		ViewData to kolekcja typu słownik (Dictionary) zawierająca typy object, dziedzicząca po klasie ViewDataDictionary, kluczami w tym słowniku są zmienne typu string,
+
+	</li>
+	<li>
+		ViewData wymaga rzutowania dla typów złożonych oraz sprawdzania wartości null aby zapobiec błędom,
+
+	</li>
+	<li>
+		ViewBag jest typu dynamic (C# 4.0) a więc można zmieniać typ zmiennej w dowolnym momencie i nie wymaga rzutowania jak ViewData.
+	</li>
+</ol>
+
+<div class="row">
+	<div class="col-6">
+		<h4>Przykład ViewBag w kontrolerze:</h4>
+<pre>
+public ActionResult Login(string returnUrl)
+{
+    ViewBag.ReturnUrl = returnUrl;
+    return View();
+}
+</pre>
+		<h4>Odczyt wartości z ViewBag w widoku:</h4>
+<pre>
+@@ViewBag.ReturnUrl
+</pre>
+	</div>
+	<div class="col-6">
+		<h4>Przykład ViewData w kontrolerze:</h4>
+<pre>
+public ActionResult Login(string returnUrl)
+{
+    ViewData["ReturnUrl"] = returnUrl;
+    return View();
+}</pre>
+
+		<h4>Odczyt wartości z ViewData w widoku:</h4>
+<pre>
+@@ViewData["ReturnUrl"]</pre>
+	</div>
+</div>
+
+
