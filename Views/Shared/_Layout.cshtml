@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>S9 - RAZOR</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+	<header>
+		<nav class="better-nav navbar navbar-expand-sm navbar-toggleable-sm navbar-light better-bg-info border-bottom box-shadow mb-3">
+			<div class="container">
+				<a class="navbar-brand text-light" asp-area="" asp-controller="Start" asp-action="Start">RAZOR</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
+					<ul class="navbar-nav flex-grow-1">
+
+						<li class="nav-item">
+							<a class="nav-link text-light" asp-area="" asp-controller="Start" asp-action="Plan">Wstęp</a>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								ASP.Net Framework
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" asp-area="" asp-controller="Framework" asp-action="Intro">Wstęp</a>
+								<a class="dropdown-item" asp-area="" asp-controller="Framework" asp-action="Pros">Kiedy używać</a>
+								<a class="dropdown-item" asp-area="" asp-controller="Framework" asp-action="Cons">Kiedy nie używać</a>
+								<a class="dropdown-item" asp-area="" asp-controller="Framework" asp-action="X">TODO</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								ASP.Net Core
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" asp-area="" asp-controller="Core" asp-action="Intro">Wstęp</a>
+								<a class="dropdown-item" asp-area="" asp-controller="Core" asp-action="Pros">Kiedy używać</a>
+								<a class="dropdown-item" asp-area="" asp-controller="Core" asp-action="Cons">Kiedy nie używać</a>
+								<a class="dropdown-item" asp-area="" asp-controller="Core" asp-action="X">TODO</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Razor
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" asp-area="" asp-controller="Razor" asp-action="Intro">TODO</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-light" asp-area="" asp-controller="Summary" asp-action="Index">Podsumowanie</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+	</header>
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class="border-top footer">
+		<div class="container">
+
+			<div class="progress mt-1" style="height:20px;">
+				<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="@(ViewData["Progres"])" aria-valuemin="0" aria-valuemax="100" style="width: @(ViewData["Progres"])%">@(ViewData["Progres"])%</div>
+			</div>
+
+			&copy; 2019 - Sekcja 9 Razor (Core + Framework)
+		</div>
+	</footer>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@RenderSection("Scripts", required: false)
+</body>
+</html>

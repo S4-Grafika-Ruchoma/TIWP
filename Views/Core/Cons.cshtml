@@ -1,0 +1,38 @@
+﻿
+@{
+	ViewData["Title"] = "Intro";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Progres"] = 10;
+}
+
+<h3>Kiedy nie używać .NET Core...?</h3>
+
+<span style="font-size: 15pt;">
+	Jednym z problemów .NET Core jest brak wsparcia dla niektórych typów bibliotek w stosunku do .NET Framework. Warto mieć świadomość, kiedy nie będziemy mogli skorzystać z zalet tej technologii:
+</span>
+
+<br />
+<br />
+
+<ol style="font-size: 15pt;">
+	<li>Windows Forms oraz WPF nie są wspierane. Jeżeli chcesz stowrzyć aplikację desktopową na system MacOS musisz posłużyć się zestawem narzędzi Mono;</li>
+	<li>
+		ASP.NET Web Forms również nie występują w .NET Core. Sama technologia .NET Framework wciąż jest wspierana oraz aktualizowana (nieco wolniej z uwagi na .NET Core)
+		dlatego jeżeli chcesz używać tej technologii nie musisz niczego się obawiać;
+	</li>
+	<li>
+		również usługi WCF zostały wycofane. Alternatywą jest REST API utworzone w technologii .NET Core. Ten typ projektu jest swojego rodzaju kontynuacją WCF - trzeba jednak mieć pełną świadomość zmiany niektórych konceptów.
+	</li>
+	<li>
+		brak wsparcia bibliotek firm trzecich: na ten problem możecie natrafić, kiedy wasz przestarzały projekt będziecie przerabiać na technologię .NET Core.
+	</li>
+	<li>
+		potrzebujesz dostępu do specyficznych API dla systemu Windows. .NET Core został zaprojektowany jako framework wieloplatformowy – może działać na każdym wspieranym systemie.
+		Operacje takie jak dostęp do rejestru czy WMI (zestaw protokołów pozwalających na dostęp i zarządzanie zasobami komputera takimi jak adaptery sieciowe, lista procesów, czujniki temperatury, etc.)
+		nie są dostępne z poziomu tej technologii.
+	</li>
+	<li>
+		.NET Core jest stale rozwijana i oferuje coraz więcej. Znakomitym przykładem jest SignalR. Do wersji .NET Core 2.1 nie był wspierany.
+	</li>
+
+</ol>

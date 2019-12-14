@@ -1,0 +1,38 @@
+﻿
+@{
+	ViewData["Title"] = "Intro";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Progres"] = 3;
+}
+
+<h3>Co to jest .NET Framework?</h3>
+
+<span style="font-size: 15pt;">
+	.NET Framework to zarządzane środowisko wykonawcze dla systemu Windows, które zapewnia różne usługi dla uruchomionych aplikacji.
+	Składa się z dwóch głównych składników: środowiska uruchomieniowego języka wspólnego (CLR), który jest aparatem wykonywania obsługującym aplikacje działające i Biblioteka klas .NET Framework,
+	która udostępnia bibliotekę przetestowanego kodu do wielokrotnego użytku, który deweloperzy mogą wywoływać z własnych aplikacji. Usługi zapewniane przez .NET Framework do uruchamiania aplikacji
+	obejmują następujące elementy:
+</span>
+<br /><br />
+<ol style="font-size: 15pt;">
+	<li>
+		Zarządzanie pamięcią. W wielu językach programowania programiści są odpowiedzialni za przydzielanie i zwalnianie pamięci i za obsługę czasów istnienia obiektów. W aplikacjach .NET Framework CLR
+		udostępnia te usługi w imieniu aplikacji.
+	</li>
+	<li>
+		Wspólny system typów. W tradycyjnych językach programowania typy podstawowe są definiowane przez kompilator, co komplikuje współdziałania wielu języków. W programie .NET Framework typy podstawowe
+		są zdefiniowane przez system typów programu .NET Framework i wspólne dla wszystkich języków przeznaczonych dla środowiska .NET Framework.
+	</li>
+	<li>
+		Kompleksowa biblioteka klas. Zamiast konieczności pisania ogromnych ilości kodu do obsługi typowych operacji programistycznych niskiego poziomu, programiści wykorzystują łatwo dostępną bibliotekę
+		typów i ich członków z biblioteki klas .NET Framework.
+	</li>
+	<li>
+		Środowiska i technologie programistyczne. .NET Framework obejmuje biblioteki dla określonych obszarów tworzenia aplikacji, takich jak ASP.NET for Web Apps, ADO.NET do uzyskiwania dostępu do danych,
+		Windows Communication Foundation dla aplikacji opartych na usłudze i Windows Presentation Foundation dla aplikacji klasycznych systemu Windows.
+	</li>
+	<li>
+		Przeznaczanie dla wielu platform. Według .NET Standard, deweloperzy tworzą biblioteki klas, które działają na wielu platformach .NET Framework obsługiwanych przez tę wersję Standard. Na przykład
+		biblioteki przeznaczone dla .NET Standard 2,0 mogą być używane przez aplikacje obsługujące .NET Framework 4.6.1, .NET Core 2,0 i platformy UWP 10.0.16299.
+	</li>
+</ol>
